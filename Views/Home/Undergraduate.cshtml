@@ -1,0 +1,36 @@
+﻿@model UndergraduateViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Undergraduate Page</h1>
+</div>
+<div>
+    @foreach (var undergraduate in Model.undergraduate)
+    {
+        <div class="flex-xl-row card m-2 p-2">
+            <div class="thumbnail">
+                <b>Degree Name:</b>
+                <h3 style="font-size:large">
+                    @undergraduate.degreeName
+                </h3>
+                <div class="caption">
+                    <b>Title:</b>
+                    <p>
+                        @undergraduate.title
+                    </p>
+                    <b>Description:</b>
+                    <p>
+                        @undergraduate.description
+                    </p>
+                    <b>Concentrations:</b>
+                    @foreach (var concentrations in undergraduate.concentrations)
+                    {
+                        <p>
+                            @concentrations
+                        </p>
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

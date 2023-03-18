@@ -1,0 +1,34 @@
+﻿@model CoopTableView
+
+<div class="text-center">
+    <h1>Welcome to the Coop Table Page</h1>
+</div>
+<div>
+    <table id="coop-table" class="display hidden">
+        <thead>
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Term</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var coopTableInfo in Model.coopTable.coopInformation)
+            {
+                <tr>
+                    <td>@coopTableInfo.employer</td>
+                    <td>@coopTableInfo.degree</td>
+                    <td>@coopTableInfo.city</td>
+                    <td>@coopTableInfo.term</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+    <script>
+        $(document).ready(function () {
+            $('#coop-table').DataTable();
+        });
+    </script>

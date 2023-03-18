@@ -1,0 +1,75 @@
+﻿@model FacultyViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Faculty Page</h1>
+</div>
+<div class="row align-content-center justify-content-center">
+    @foreach (var faculty in Model.faculty)
+    {
+        <div class="card m-2" style="width: 18rem;">
+            <img class="m-1 align-self-center rounded-circle" Height="200" width="200" src="@faculty.imagePath" alt="No faculty image found" />
+            <div class="card-body">
+                @if (faculty.name != "")
+                {
+                    <h3 class="card-title">
+                        @faculty.name
+                    </h3>
+                }
+                @if (faculty.title != "")
+                {
+                    <p>
+                        <b>Title:</b> @faculty.title
+                    </p>
+                }
+                @if (faculty.office != "")
+                {
+                    <p>
+                        <b>Office:</b> @faculty.office
+                    </p>
+                }
+                @if (faculty.tagline != "")
+                {
+                    <p>
+                        <b>Tagline:</b> @faculty.tagline
+                    </p>
+                }
+                @if (faculty.phone != "")
+                {
+                    <p>
+                        <b>Phone:</b> @faculty.phone
+                    </p>
+                }
+                @if (faculty.email != "")
+                {
+                    <p>
+                        <b>Email:</b> @faculty.email
+                    </p>
+                }
+                @if (faculty.interestArea != "")
+                {
+                    <p>
+                        <b>interestArea:</b> @faculty.interestArea
+                    </p>
+                }
+                @if (faculty.website != "")
+                {
+                    <p>
+                        <b>Website:</b> @faculty.website
+                    </p>
+                }
+                @if (faculty.twitter != "")
+                {
+                    <p>
+                        <b>Twitter:</b> @faculty.twitter
+                    </p>
+                }
+                @if (faculty.facebook != "")
+                {
+                    <p>
+                        <b>Facebook:</b> @faculty.facebook
+                    </p>
+                }
+            </div>
+        </div>
+    }
+</div>

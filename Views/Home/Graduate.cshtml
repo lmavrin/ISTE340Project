@@ -1,0 +1,52 @@
+﻿@model GraduateViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Faculty Page</h1>
+</div>
+<div class="row align-content-center justify-content-center">
+    @foreach (var graduate in Model.graduate)
+    {
+        <div class="card m-2 p-2">
+            <div class="thumbnail">
+                <h3 style="font-size:large">
+                    <b>DegreeName:</b> @graduate.degreeName
+                </h3>
+                <div class="caption">
+                    @if (graduate.title != null)
+                    {
+                        <p>
+                            <b>Title:</b> @graduate.title
+                        </p>
+                    }
+                    @if (graduate.description != null)
+                    {
+                        <p>
+                            <b>Description:</b> @graduate.description
+                        </p>
+                    }
+                    <b>Concetrations:</b>
+                    @if (graduate.concentrations != null)
+                    {
+                        @foreach (var concentrations in graduate.concentrations)
+                        {
+                            <p>
+                                @concentrations
+                            </p>
+                        }
+                    }
+                    @if (graduate.availableCertificates != null)
+                    {
+                        <b>Available Certificates:</b>
+                        @foreach (var certificates in graduate.availableCertificates)
+                        {
+                            <p>
+                                @certificates
+                            </p>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

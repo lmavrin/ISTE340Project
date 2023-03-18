@@ -1,0 +1,36 @@
+﻿@model EmploymentTableViewModel
+
+<div class="text-center">
+    <h1>Welcome to the Employment Page</h1>
+</div>
+<div>
+    <table id="emp-table" class="display hidden">
+        <thead>
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Title</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employmentInfo in Model.employmentTable.professionalEmploymentInformation)
+            {
+                <tr>
+                    <td>@employmentInfo.employer</td>
+                    <td>@employmentInfo.degree</td>
+                    <td>@employmentInfo.city</td>
+                    <td>@employmentInfo.title</td>
+                    <td>@employmentInfo.startDate</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#emp-table').DataTable();
+    });
+</script>
